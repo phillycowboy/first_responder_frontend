@@ -29,6 +29,14 @@ const Nav = () => {
                         Contact
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink 
+                    exact
+                    to="/Hospitals"
+                    >
+                        Hospitals
+                    </NavLink>
+                </li>
             </ul>
         </div>
     )
