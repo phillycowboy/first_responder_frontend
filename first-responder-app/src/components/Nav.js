@@ -32,9 +32,17 @@ const Nav = () => {
                 <li>
                     <NavLink 
                     exact
-                    to="/Hospitals"
+                    to="/hospitals"
                     >
                         Hospitals
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                    exact
+                    to="/patients"
+                    >
+                        Patients
                     </NavLink>
                 </li>
             </ul>

@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import AboutContainer from './containers/AboutContainer'
 import ContactContainer from './containers/ContactContainer'
 import HospitalContainer from './containers/HospitalContainer'
+import PatientContainer from './containers/PatientContainer'
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route exact path="/hospitals">
             <HospitalContainer />
+          </Route>
+          <Route exact path="/patients">
+            <PatientContainer />
           </Route>
         </Switch>
       </Router>
