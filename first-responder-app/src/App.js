@@ -5,6 +5,7 @@ import AboutContainer from './containers/AboutContainer'
 import ContactContainer from './containers/ContactContainer'
 import HospitalContainer from './containers/HospitalContainer'
 import PatientContainer from './containers/PatientContainer'
+import PatientFormContainer from './containers/PatientFormContainer'
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route exact path="/patients">
             <PatientContainer />
+          </Route>
+          <Route exact path="/patient-form">
+            <PatientFormContainer />
           </Route>
         </Switch>
       </Router>

@@ -45,6 +45,14 @@ const Nav = () => {
                         Patients
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink 
+                    exact
+                    to="/patient-form"
+                    >
+                        Patient Form 
+                    </NavLink>
+                </li>
             </ul>
         </div>
     )
