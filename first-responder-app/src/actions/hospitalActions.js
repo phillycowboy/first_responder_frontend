@@ -1,8 +1,8 @@
 export const getAllHospitals = () => {
     return (dispatch) => {
-        dispatch({type: "GET_HOSPITALS"})
+        dispatch({type: "LOADING_HOSPITALS"})
         fetch("http://localhost:3001/hospitals")
         .then(response => response.json())
-        .then(response => console.log("all hospitals",response))
+        .then(response => dispatch({type: "GET_HOSPITALS", hospitals: response}))
     }
 }
