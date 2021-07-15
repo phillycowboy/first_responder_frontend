@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {Component} from 'react'
 import Hospitals from '../components/Hospitals'
-const HospitalContainer = () => {
-    return(
-        <div>
-            <Hospitals />
-        </div>
-    )
+import {connect} from 'react-redux'
+class HospitalContainer extends Component{
+    render(){
+        return(
+            <div>
+                <Hospitals />
+            </div>
+        )
+    }
+
 }
 
-export default HospitalContainer
+export default connect()(HospitalContainer)
