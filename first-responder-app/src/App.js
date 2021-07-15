@@ -6,6 +6,7 @@ import ContactContainer from './containers/ContactContainer'
 import HospitalContainer from './containers/HospitalContainer'
 import PatientContainer from './containers/PatientContainer'
 import PatientFormContainer from './containers/PatientFormContainer'
+import {connect} from 'react-redux'
 
 function App() {
   return (
@@ -37,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);
