@@ -49,12 +49,13 @@ class App extends Component{
   }
 
 }
-const mapStateToProps = (state) => {
-    return {
-      hospitals: state.hospitals,
-      loading: state.loading
-    }
-  }
+// const mapStateToProps = (state) => {
+//   console.log("mapstate state",state)
+//     return {
+//       hospitals: state.hospitalReducer.hospitals,
+//       loading: state.loading
+//     }
+//   }
 
 const mapDispatchToProps = (dispatch) => {
     return{
@@ -62,4 +63,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
