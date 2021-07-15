@@ -8,9 +8,10 @@ import { applyMiddleware, combineReducers, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import hospitalReducer from './reducers/hospitalReducer'
 import patientReducer from './reducers/patientReducer'
+import {composeWithDevTools} from 'redux-devtools-extension'
 
 const rootRedcuer = combineReducers({hospitalReducer, patientReducer})
-const store = createStore(rootRedcuer, applyMiddleware(thunk))
+const store = createStore(rootRedcuer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <Provider store={store}>

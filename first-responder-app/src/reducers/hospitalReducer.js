@@ -7,7 +7,10 @@ const hospitalReducer = (state = {hospitals: [], loading: false}, action) => {
                 loading: true
             }
         case "GET_HOSPITALS":
-            return {...state, hospitals: action.hospitals, loading: false}
+            return {
+                ...state, 
+                hospitals: action.hospitals,
+                loading: false}
         default:
             return state;
     }
