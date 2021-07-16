@@ -3,7 +3,9 @@ import Hospitals from '../components/Hospitals'
 import {connect} from 'react-redux'
 // import {getAllHospitals} from '../actions/hospitalActions'
 class HospitalContainer extends Component{
-
+    // componentDidMount(){
+    //     this.props.getAllHospitals()
+    // }
     render(){
         
         return(
