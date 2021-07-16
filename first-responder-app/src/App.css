@@ -3,6 +3,7 @@
 }
 body {
 	background-color: aquamarine;
+	scroll-behavior: smooth;
 }
 .nav {
 	width: 100%;
@@ -10,6 +11,7 @@ body {
 	background-color: gray;
 	display: grid;
 	place-items: center;
+	box-shadow: 0px 5px 5px -2px black;
 }
 ul {
 	list-style-type: none;

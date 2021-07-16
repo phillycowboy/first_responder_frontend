@@ -2,6 +2,9 @@ import React from 'react'
 
 const Patients = (props) => {
     console.log(props)
+    // if(props.patients.patient.hospital_id === "1"){
+    //     return "St Mercy"
+    // }
     return (
         <div>
             {props.patients.map((patient, id) => (
