@@ -27,15 +27,28 @@ class PatientForm extends Component{
         this.setState({
             [event.target.name]: event.target.value
         })
-        console.log(`${event.target.name}`, event.target.value)
-        // handleOnchange
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
         console.log("what is this?", this.state)
         this.props.addPatient(this.state)
-        // dispatch action
+        this.setState({
+            first_name: "",
+            last_name: "",
+            age: "",
+            gender: "",
+            pronouns: "",
+            heart_rate: "",
+            blood_pressure: "",
+            respiration_rate: "",
+            temperature: "",
+            blood_glucose_level: "",
+            end_tidal: "",
+            chief_complaint: "",
+            on_scene_descripton: "",
+            hospital_id: ""
+        })
     }
 
     render(){
@@ -69,7 +82,7 @@ class PatientForm extends Component{
                     <label>Chief Complaint:</label>
                     <input type="text" name="chief_complaint" value={this.state.chief_complaint} onChange={this.handleOnChange}/><br/><br/>
                     <label>On Scene Description:</label>
-                    <input type="text" name="on_scene_description" value={this.state.on_scene_descripton} onChange={this.handleOnChange}/><br/><br/>
+                    <textarea type="text" name="on_scene_description" defaultValue={this.state.on_scene_descripton} onChange={this.handleOnChange}/><br/><br/>
                     <label>Choose Location To Send Patient:</label>
                     <select name="hospital_id" onChange={this.handleOnChange}>
                         <option>Select Hospital</option>
