@@ -5,6 +5,7 @@ const Patients = (props) => {
     // if(props.patients.patient.hospital_id === "1"){
     //     return "St Mercy"
     // }
+
     return (
         <div>
             {props.patients.map((patient, id) => (
@@ -22,7 +23,9 @@ const Patients = (props) => {
                     <h4>End Tidal:{patient.end_tidal}</h4>
                     <h4>Chief Complaint:{patient.chief_complaint}</h4>
                     <h4>On Scene Description:{patient.on_scene_description}</h4>
-                    <h4>Located at Hospital:{patient.hospital_id}</h4><hr/>
+                    <h4>Located at Hospital:{props.hospitals.find((hospital) => (
+                            hospital.id === patient.hospital_id
+                    )).name}</h4><hr/>
                 </div>
             ))}
         </div>

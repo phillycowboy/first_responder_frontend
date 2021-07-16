@@ -6,7 +6,7 @@ class PatientConatiner extends Component{
     render(){
         return(
             <div>
-                <Patients patients={this.props.patients}/>
+                <Patients patients={this.props.patients} hospitals={this.props.hospitals}/>
             </div>
         )
 
@@ -16,7 +16,8 @@ const mapStateToProps = (state) => {
     console.log("patient container", state)
     return{
         patients: state.patientReducer.patients,
-        loading: state.patientReducer.loading
+        loading: state.patientReducer.loading,
+        hospitals: state.hospitalReducer.hospitals
     }
 }
 

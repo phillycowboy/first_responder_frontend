@@ -20,20 +20,20 @@ class PatientForm extends Component{
         end_tidal: "",
         chief_complaint: "",
         on_scene_descripton: "",
-        hospital: ""
+        hospital_id: ""
         // does hospital need to be a string or an value?
     }
     handleOnChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
-        console.log("textarea", event.target.value)
+        console.log(`${event.target.name}`, event.target.value)
         // handleOnchange
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(event.target.value)
+        console.log("what is this?", this.state)
         this.props.addPatient(this.state)
         // dispatch action
     }
@@ -69,12 +69,13 @@ class PatientForm extends Component{
                     <label>Chief Complaint:</label>
                     <input type="text" name="chief_complaint" value={this.state.chief_complaint} onChange={this.handleOnChange}/><br/><br/>
                     <label>On Scene Description:</label>
-                    <textarea type="text" name="on_scene_description" rows={5} cols={50} defaultValue={this.state.on_scene_descripton} onChange={this.handleOnChange}/><br/><br/>
+                    <input type="text" name="on_scene_description" value={this.state.on_scene_descripton} onChange={this.handleOnChange}/><br/><br/>
                     <label>Choose Location To Send Patient:</label>
-                    <select name="hospital" value={this.state.hospital} onChange={this.handleOnChange}>
-                        <option value="St Mercy">St Mercy</option>
-                        <option value="Trauma Center">Trauma Center</option>
-                        <option value="Pedatric Care Center">Pediatric Care Center</option>
+                    <select name="hospital_id" onChange={this.handleOnChange}>
+                        <option>Select Hospital</option>
+                        {this.props.hospitals.map((hospital) => (
+                            <option value={hospital.id} name="hospital_id">{hospital.name}</option>
+                        ))}
                     </select><br/><br/>
                     <label>Submit Patient:</label><br/><br/>
                     <input type="submit"/>
@@ -85,10 +86,16 @@ class PatientForm extends Component{
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
     return{
-        addPatient: () => dispatch(addPatient())
+        hospitals: state.hospitalReducer.hospitals
     }
 }
 
-export default connect(null, mapDispatchToProps)(PatientForm)
+const mapDispatchToProps = (dispatch) => {
+    return{
+        addPatient: (patient) => dispatch(addPatient(patient))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PatientForm)

@@ -9,6 +9,7 @@ export const getAllPatients = () => {
 }
 
 export const addPatient = (patient) => {
+    console.log("patient from action", patient)
     return (dispatch) => {
         fetch("http://localhost:3001/patients", {
             method: "POST",
@@ -16,10 +17,10 @@ export const addPatient = (patient) => {
                 "content-type": "application/json"
             },
             body: JSON.stringify({
-                patient
+                patient: patient
             })
         })
         .then(response => response.json())
-        .then(response => console.log(response))
+        .then(response => dispatch({type: "ADD_PATIENT", patient: response}))
     }
 }

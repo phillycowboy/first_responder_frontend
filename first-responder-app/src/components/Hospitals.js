@@ -9,10 +9,10 @@ const Hospital = (props) => {
                 <h1>{hospital.name}</h1>
                 <h2>{hospital.address}</h2>
                 <h3>{hospital.phone_number}</h3>
+                <span>Patients Currently Administered:</span>
                 {hospital.patients.map((patient, id)=> (
                     <div>
-                        <span>Patients Currently Administered:</span>
-                        <p>{patient.first_name} {patient.last_name}</p><hr/>
+                        <p>{patient.first_name} {patient.last_name}</p>
                     </div>
                 ))}
                 </div>
