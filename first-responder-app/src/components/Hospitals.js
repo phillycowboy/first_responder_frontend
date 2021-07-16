@@ -14,6 +14,8 @@ class Hospital extends Component{
                     {hospital.patients.map((patient, id)=> (
                         <div>
                             <p>{patient.first_name} {patient.last_name}</p>
+                            {/* DELETE PATIENT */}
+                            {/* add delete button that has a function that dispatches an action, and talks to a reducer, need to connect to store */}
                         </div>
                     ))}
                     </div>
