@@ -10,7 +10,8 @@ const hospitalReducer = (state = {hospitals: [], loading: false}, action) => {
             return {
                 ...state, 
                 hospitals: action.hospitals,
-                loading: false}
+                loading: false
+            }
         default:
             return state;
     }

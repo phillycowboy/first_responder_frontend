@@ -9,6 +9,7 @@ import PatientContainer from './containers/PatientContainer'
 import PatientFormContainer from './containers/PatientFormContainer'
 import {connect} from 'react-redux'
 import {getAllHospitals} from './actions/hospitalActions'
+import {getAllPatients} from './actions/patientActions'
 // import Contact from './components/Contact';
 
 class App extends Component{
@@ -16,6 +17,7 @@ class App extends Component{
       componentDidMount(){
         console.log(this.props)
         this.props.getAllHospitals()
+        this.props.getAllPatients()
     }
 
   render(){
@@ -59,7 +61,8 @@ class App extends Component{
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        getAllHospitals: () => dispatch(getAllHospitals())
+        getAllHospitals: () => dispatch(getAllHospitals()),
+        getAllPatients: () => dispatch(getAllPatients())
     }
 }
 
