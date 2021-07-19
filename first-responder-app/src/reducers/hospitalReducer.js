@@ -17,4 +17,6 @@ const hospitalReducer = (state = {hospitals: [], loading: false}, action) => {
     }
 }
 
+// need to find nested patients array from hospitals 
+
 export default hospitalReducer

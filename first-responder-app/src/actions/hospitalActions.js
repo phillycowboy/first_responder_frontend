@@ -6,3 +6,5 @@ export const getAllHospitals = () => {
         .then(response => dispatch({type: "GET_HOSPITALS", hospitals: response}))
     }
 }
+
+// make fetch DELETE to delete patients from hospitals 

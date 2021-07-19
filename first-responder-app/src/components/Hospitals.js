@@ -35,6 +35,7 @@ class Hospital extends Component{
 const mapDispatchToProps = (dispatch) => {
     return {
         deletePatient: (patient) => dispatch(deletePatient(patient))
+        // need to make an action to delete a patient from hospitalReducer, it is deleting from patientsReducer
     }
 }
 
