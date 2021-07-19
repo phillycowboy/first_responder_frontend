@@ -18,7 +18,7 @@ class HospitalContainer extends Component{
 }
 
 const mapStateToProps = (state) => {
-    console.log('hospital container',state)
+    console.log('hospital container', state)
     return {
       hospitals: state.hospitalReducer.hospitals,
       loading: state.hospitalReducer.loading,

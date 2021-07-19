@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import {deletePatient} from '../actions/patientActions'
 
 class Hospital extends Component{
-    handleOnClick = () => {
-        console.log("props from delete function", this.props.patients)
-        this.props.deletePatient(this.props.patients.id)
+    handleOnClick = (id) => {
+        console.log("props from delete function", this.props.patients.id)
+        this.props.deletePatient(id)
     }
 
     render(){
@@ -19,7 +19,7 @@ class Hospital extends Component{
                     <span>Patients Currently Administered:</span>
                     {hospital.patients.map((patient, id)=> (
                         <div key={id}>
-                            <p>{patient.first_name} {patient.last_name}<button onClick={this.handleOnClick}>X</button></p>
+                            <p>{patient.first_name} {patient.last_name} <button onClick={() => this.handleOnClick(patient.id)}>X</button></p>
                             {/* DELETE PATIENT */}
                             {/* add delete button that has a function that dispatches an action, and talks to a reducer, need to connect to store */}
                         </div>

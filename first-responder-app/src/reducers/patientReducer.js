@@ -18,7 +18,8 @@ const patientReducer = (state = {patients: [], loading: false}, action) => {
                 patients: [...state.patients, action.patient]
             }
         case "DELETE_PATIENT":
-            const patients = state.patients.filter(patient => patient.id !== action.id)
+            console.log('delete action', action)
+            const patients = state.patients.filter(patient => patient.id !== action.patient.id)
             return{
                 ...state,
                 patients 
