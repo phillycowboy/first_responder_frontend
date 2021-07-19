@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 
 class Hospital extends Component{
+    handleOnClick = () => {
+        console.log("delete")
+    }
+
     render(){
         console.log(this.props.hospitals)
         return(
@@ -13,7 +17,7 @@ class Hospital extends Component{
                     <span>Patients Currently Administered:</span>
                     {hospital.patients.map((patient, id)=> (
                         <div>
-                            <p>{patient.first_name} {patient.last_name}</p>
+                            <p>{patient.first_name} {patient.last_name}<button onClick={this.handleOnClick}>X</button></p>
                             {/* DELETE PATIENT */}
                             {/* add delete button that has a function that dispatches an action, and talks to a reducer, need to connect to store */}
                         </div>
