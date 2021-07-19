@@ -5,11 +5,11 @@ import {deletePatient} from '../actions/patientActions'
 class Hospital extends Component{
     handleOnClick = () => {
         console.log("delete")
-        this.props.deletePatient(this.props.patient.id)
+        this.props.deletePatient(this.props.patients)
     }
 
     render(){
-        console.log(this.props.hospitals)
+        console.log(this.props.patients.id)
         return(
             <div>
                 {this.props.hospitals.map((hospital, id) => (
@@ -19,7 +19,7 @@ class Hospital extends Component{
                     <h3>{hospital.phone_number}</h3>
                     <span>Patients Currently Administered:</span>
                     {hospital.patients.map((patient, id)=> (
-                        <div>
+                        <div key={id}>
                             <p>{patient.first_name} {patient.last_name}<button onClick={this.handleOnClick}>X</button></p>
                             {/* DELETE PATIENT */}
                             {/* add delete button that has a function that dispatches an action, and talks to a reducer, need to connect to store */}

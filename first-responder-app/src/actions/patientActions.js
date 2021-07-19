@@ -25,13 +25,14 @@ export const addPatient = (patient) => {
     }
 }
 
-export const deletePatient = (patient) => {
+export const deletePatient = (id) => {
     return (dispatch) => {
-        fetch(`http://localhost:3001/patient/${patient.id}`, {
+        fetch(`http://localhost:3001/patients/${id}`, {
             method: "DELETE",
         })
         .then(response => response.json())
-        .then(response => dispatch({type: "DELETE_PATIENT", patient: response}))
+        .then(response => dispatch({type: "DELETE_PATIENT", patient: id}))
+        // .then(response => console.log("delete response", response))
     }
 
 }
