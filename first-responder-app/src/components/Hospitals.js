@@ -1,8 +1,11 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
+import {deletePatient} from '../actions/patientActions'
+
 class Hospital extends Component{
     handleOnClick = () => {
         console.log("delete")
+        this.props.deletePatient(this.props.patient.id)
     }
 
     render(){
@@ -30,4 +33,10 @@ class Hospital extends Component{
     }
 }
 
-export default connect()(Hospital)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        deletePatient: (patient) => dispatch(deletePatient(patient))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Hospital)

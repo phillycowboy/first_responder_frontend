@@ -31,7 +31,7 @@ export const deletePatient = (patient) => {
             method: "DELETE",
         })
         .then(response => response.json())
-        .then(response => console.log("delete action from patient action", response))
+        .then(response => dispatch({type: "DELETE_PATIENT", patient: response}))
     }
 
 }
