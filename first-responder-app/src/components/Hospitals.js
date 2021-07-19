@@ -4,12 +4,11 @@ import {deletePatient} from '../actions/patientActions'
 
 class Hospital extends Component{
     handleOnClick = () => {
-        console.log("delete")
-        this.props.deletePatient(this.props.patients)
+        console.log("props from delete function", this.props.patients)
+        this.props.deletePatient(this.props.patients.id)
     }
 
     render(){
-        console.log(this.props.patients.id)
         return(
             <div>
                 {this.props.hospitals.map((hospital, id) => (
