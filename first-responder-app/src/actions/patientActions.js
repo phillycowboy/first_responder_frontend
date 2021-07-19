@@ -9,7 +9,7 @@ export const getAllPatients = () => {
 }
 
 export const addPatient = (patient) => {
-    console.log("patient from action", patient)
+    // console.log("patient from action", patient)
     return (dispatch) => {
         fetch("http://localhost:3001/patients", {
             method: "POST",
@@ -23,4 +23,15 @@ export const addPatient = (patient) => {
         .then(response => response.json())
         .then(response => dispatch({type: "ADD_PATIENT", patient: response}))
     }
+}
+
+export const deletePatient = (patient) => {
+    return (dispatch) => {
+        fetch(`http://localhost:3001/patient/${patient.id}`, {
+            method: "DELETE",
+        })
+        .then(response => response.json())
+        .then(response => console.log("delete action from patient action", response))
+    }
+
 }

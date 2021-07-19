@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import { connect } from 'react-redux'
 class Hospital extends Component{
     handleOnClick = () => {
         console.log("delete")
@@ -30,4 +30,4 @@ class Hospital extends Component{
     }
 }
 
-export default Hospital
+export default connect()(Hospital)

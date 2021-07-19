@@ -10,7 +10,7 @@ class HospitalContainer extends Component{
         
         return(
             <div>
-                <Hospitals hospitals={this.props.hospitals}/>
+                <Hospitals hospitals={this.props.hospitals} patients={this.props.patients}/>
             </div>
         )
     }
@@ -18,9 +18,11 @@ class HospitalContainer extends Component{
 }
 
 const mapStateToProps = (state) => {
+    console.log('hospital container',state)
     return {
       hospitals: state.hospitalReducer.hospitals,
-      loading: state.hospitalReducer.loading
+      loading: state.hospitalReducer.loading,
+      patients: state.patientReducer.patients
     }
   }
 
