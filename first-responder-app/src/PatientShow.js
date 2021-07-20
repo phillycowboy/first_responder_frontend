@@ -8,6 +8,9 @@ const PatientShow = (props) => {
     return (
         <div>
             {patient}
+            {/* {props.patients.map((p) => (
+                p.first_name
+            ))} */}
         </div>
     )
 }
