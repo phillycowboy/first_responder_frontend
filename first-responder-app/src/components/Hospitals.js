@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import {deletePatient} from '../actions/patientActions'
+// import {deletePatient} from '../actions/patientActions'
 
 class Hospital extends Component{
-    handleOnClick = (id) => {
-        console.log("props from delete function", this.props.patients.id)
-        this.props.deletePatient(id)
-    }
+    // handleOnClick = (id) => {
+    //     console.log("props from delete function", this.props.patients.id)
+    //     this.props.deletePatient(id)
+    // }
 
     render(){
         return(
@@ -19,7 +19,8 @@ class Hospital extends Component{
                     <span>Patients Currently Administered:</span>
                     {hospital.patients.map((patient, id)=> (
                         <div key={id}>
-                            <p>{patient.first_name} {patient.last_name} <button onClick={() => this.handleOnClick(patient.id)}>X</button></p>
+                            <p>{patient.first_name} {patient.last_name}</p>
+                            {/* <button onClick={() => this.handleOnClick(patient.id)}>X</button></p> */}
                             {/* DELETE PATIENT */}
                             {/* add delete button that has a function that dispatches an action, and talks to a reducer, need to connect to store */}
                         </div>
@@ -32,11 +33,11 @@ class Hospital extends Component{
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        deletePatient: (patient) => dispatch(deletePatient(patient))
-        // need to make an action to delete a patient from hospitalReducer, it is deleting from patientsReducer
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         deletePatient: (patient) => dispatch(deletePatient(patient))
+//         // need to make an action to delete a patient from hospitalReducer, it is deleting from patientsReducer
+//     }
+// }
 
-export default connect(null, mapDispatchToProps)(Hospital)
+export default connect()(Hospital)
