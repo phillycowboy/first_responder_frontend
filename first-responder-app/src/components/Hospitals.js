@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 // import {deletePatient} from '../actions/patientActions'
 
 class Hospital extends Component{
@@ -17,7 +17,8 @@ class Hospital extends Component{
                     <h2>{hospital.address}</h2>
                     <h3>{hospital.phone_number}</h3>
                     <span>Patients Currently Administered:</span>
-                    {hospital.patients.map((patient, id)=> (
+                    {this.props.patients.filter((patient)=> ( patient.hospital_id === hospital.id)).map((patient, id) => (
+
                         <div key={id}>
                             <p>{patient.first_name} {patient.last_name}</p>
                             {/* <button onClick={() => this.handleOnClick(patient.id)}>X</button></p> */}
@@ -40,4 +41,10 @@ class Hospital extends Component{
 //     }
 // }
 
-export default connect()(Hospital)
+// const mapStateToProps = (state) => {
+//     return{
+//         patients: state.patientReducer.patients
+//     }
+// }
+
+export default Hospital
