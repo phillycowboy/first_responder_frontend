@@ -7,6 +7,7 @@ import ContactContainer from './containers/ContactContainer'
 import HospitalContainer from './containers/HospitalContainer'
 import PatientContainer from './containers/PatientContainer'
 import PatientFormContainer from './containers/PatientFormContainer'
+import PatientShow from './PatientShow'
 import {connect} from 'react-redux'
 import {getAllHospitals} from './actions/hospitalActions'
 import {getAllPatients} from './actions/patientActions'
@@ -43,6 +44,9 @@ class App extends Component{
             <Route exact path="/patient-form">
               <PatientFormContainer />
             </Route>
+            <Route path="/patients/:id" render={(routerProps) => <PatientShow {...routerProps} />}/>
+             
+            
           </Switch>
         </Router>
       </div>

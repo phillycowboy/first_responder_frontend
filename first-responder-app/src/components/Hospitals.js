@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
+// import { connect } from 'react-redux'
 
 
 class Hospital extends Component{
@@ -15,7 +17,7 @@ class Hospital extends Component{
                     {this.props.patients.filter((patient)=> ( patient.hospital_id === hospital.id)).map((patient, id) => (
 
                         <div key={id}>
-                            <p>{patient.first_name} {patient.last_name}</p>
+                            <Link to={{pathname:`/patients/${patient.id}`}}><p>{patient.first_name} {patient.last_name}</p></Link>
                         </div>
                     ))}
                     </div>
