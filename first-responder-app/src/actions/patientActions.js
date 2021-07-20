@@ -32,6 +32,7 @@ export const deletePatient = (id) => {
         })
         .then(response => response.json())
         .then(response => dispatch({type: "DELETE_PATIENT", patient: response}))
+        // .then() make another dispatach for your hospitalReducer to find nested array of patients
         // .then(response => console.log("delete response", response))
     }
 
