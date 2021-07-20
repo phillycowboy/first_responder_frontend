@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import {deletePatient} from '../actions/patientActions'
 
 class Patients extends Component{
-    // console.log(props)
     handleOnClick = (id) => {
         console.log("props from delete function", this.props.patients.id)
         this.props.deletePatient(id)
@@ -38,7 +37,6 @@ class Patients extends Component{
 const mapDispatchToProps = (dispatch) => {
     return {
         deletePatient: (patient) => dispatch(deletePatient(patient))
-        // need to make an action to delete a patient from hospitalReducer, it is deleting from patientsReducer
     }
 }
 

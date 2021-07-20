@@ -4,12 +4,12 @@ export const getAllPatients = () => {
         fetch("http://localhost:3001/patients")
         .then(response => response.json())
         .then(response => dispatch({type: "GET_PATIENTS", patients: response}))
-        // .then(response => console.log("all patients",response))
+        
     }
 }
 
 export const addPatient = (patient) => {
-    // console.log("patient from action", patient)
+    
     return (dispatch) => {
         fetch("http://localhost:3001/patients", {
             method: "POST",
@@ -32,9 +32,6 @@ export const deletePatient = (id) => {
         })
         .then(response => response.json())
         .then(response => dispatch({type: "DELETE_PATIENT", patient: response}))
-        // .then(response => dispatch({type: "DELETE_PATIENT_FROM_HOSPITAL", patient: response}))
-        // .then() make another dispatach for your hospitalReducer to find nested array of patients
-        // .then(response => console.log("delete response", response))
     }
 
 }

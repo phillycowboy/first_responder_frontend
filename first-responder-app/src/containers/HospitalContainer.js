@@ -1,11 +1,9 @@
 import React, {Component} from 'react'
 import Hospitals from '../components/Hospitals'
 import {connect} from 'react-redux'
-// import {getAllHospitals} from '../actions/hospitalActions'
+
 class HospitalContainer extends Component{
-    // componentDidMount(){
-    //     this.props.getAllHospitals()
-    // }
+
     render(){
         
         return(
@@ -18,7 +16,6 @@ class HospitalContainer extends Component{
 }
 
 const mapStateToProps = (state) => {
-    // console.log('hospital container', state)
     return {
       hospitals: state.hospitalReducer.hospitals,
       loading: state.hospitalReducer.loading,
@@ -26,10 +23,5 @@ const mapStateToProps = (state) => {
     }
   }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return{
-//         getAllHospitals: () => dispatch(getAllHospitals())
-//     }
-// }
 
 export default connect(mapStateToProps)(HospitalContainer)

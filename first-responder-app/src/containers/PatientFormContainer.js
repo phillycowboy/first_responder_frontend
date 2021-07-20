@@ -12,7 +12,6 @@ class PatientFormContainer extends Component{
     }
 }
 
-// mapStateToProps for Patient Form
 const mapStateToProps = (state) => {
     return{
         patients: state.patientReducer.patients

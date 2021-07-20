@@ -10,7 +10,6 @@ import PatientFormContainer from './containers/PatientFormContainer'
 import {connect} from 'react-redux'
 import {getAllHospitals} from './actions/hospitalActions'
 import {getAllPatients} from './actions/patientActions'
-// import Contact from './components/Contact';
 
 class App extends Component{
 
@@ -51,13 +50,6 @@ class App extends Component{
   }
 
 }
-// const mapStateToProps = (state) => {
-//   console.log("mapstate state",state)
-//     return {
-//       hospitals: state.hospitalReducer.hospitals,
-//       loading: state.loading
-//     }
-//   }
 
 const mapDispatchToProps = (dispatch) => {
     return{

@@ -7,4 +7,3 @@ export const getAllHospitals = () => {
     }
 }
 
-// make fetch DELETE to delete patients from hospitals 

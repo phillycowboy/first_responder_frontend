@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {addPatient} from '../actions/patientActions'
 
-//dispatch action for form, onChange and submit form handles action 
-// container handles mapStateToProps
+
 
 class PatientForm extends Component{
     state = {
@@ -21,7 +20,6 @@ class PatientForm extends Component{
         chief_complaint: "",
         on_scene_descripton: "",
         hospital_id: ""
-        // does hospital need to be a string or an value?
     }
     handleOnChange = (event) => {
         this.setState({
