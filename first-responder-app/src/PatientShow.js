@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Patients from './components/Patients'
+// import Patients from './components/Patients'
 
 const PatientShow = (props) => {
     console.log("PatientShow", props)
     const patient = props.patients.find((patient) => patient.id === props.match.params.id)
     return (
         <div>
-            <Patients patient={patient}/>
+            {patient}
         </div>
     )
 }
