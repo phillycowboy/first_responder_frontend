@@ -1,4 +1,5 @@
 const hospitalReducer = (state = {hospitals: [], loading: false}, action) => {
+    console.log("state from hospitalRedcer", state.hospitals)
     switch(action.type){
         case "LOADING_HOSPITALS":
             return {
@@ -11,6 +12,12 @@ const hospitalReducer = (state = {hospitals: [], loading: false}, action) => {
                 ...state, 
                 hospitals: action.hospitals,
                 loading: false
+            }
+        case "DELETE_PATIENT_FROM_HOSPITAL":
+            const hospitals = state.hospitals.patients.filter(patient => patient.id !== action.patient.id)
+            return{
+                ...state,
+                hospitals 
             }
         default:
             return state;
