@@ -18,7 +18,7 @@ class PatientForm extends Component{
         blood_glucose_level: "",
         end_tidal: "",
         chief_complaint: "",
-        on_scene_descripton: "",
+        on_scene_description: "",
         hospital_id: ""
     }
     handleOnChange = (event) => {
@@ -44,7 +44,7 @@ class PatientForm extends Component{
             blood_glucose_level: "",
             end_tidal: "",
             chief_complaint: "",
-            on_scene_descripton: "",
+            on_scene_description: "",
             hospital_id: ""
         })
     }
@@ -80,7 +80,7 @@ class PatientForm extends Component{
                     <label>Chief Complaint:</label>
                     <input type="text" name="chief_complaint" value={this.state.chief_complaint} onChange={this.handleOnChange}/><br/><br/>
                     <label>On Scene Description:</label>
-                    <textarea type="text" name="on_scene_description" defaultValue={this.state.on_scene_descripton} onChange={this.handleOnChange}/><br/><br/>
+                    <textarea type="text" name="on_scene_description" value={this.state.on_scene_description} onChange={this.handleOnChange}/><br/><br/>
                     <label>Choose Location To Send Patient:</label>
                     <select name="hospital_id" onChange={this.handleOnChange}>
                         <option>Select Hospital</option>
