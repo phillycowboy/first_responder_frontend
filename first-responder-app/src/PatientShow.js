@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 const PatientShow = (props) => {
     console.log("PatientShow", props)
     const patient = props.patients.find((patient) => patient.id === props.match.params.id)
+    // console.log("this is the patient from Patient show", this.patient)
     return (
-        console.log("this is the patient from Patient show", patient)
         <div>
             {patient}
             {/* {props.patients.map((p) => (
