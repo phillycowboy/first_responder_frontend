@@ -7,9 +7,15 @@ class Patients extends Component{
         console.log("props from delete function", this.props.patients.id)
         this.props.deletePatient(id)
     }
+
+    handleOnChange = (e) => {
+        console.log(e.target.value)
+    }
     render(){
         return (
             <div>
+                <input type="text" name="search-bar" onChange={this.handleOnChange} placeholder="Search..."/>
+                {/* see what you can do to search for patients while still handiling state with the store */}
                 {this.props.patients.map((patient, id) => (
                     <div key={id}>
                         <h1>First Name:{patient.first_name}</h1>

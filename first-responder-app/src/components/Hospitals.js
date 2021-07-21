@@ -5,6 +5,13 @@ import {Link} from 'react-router-dom'
 
 class Hospital extends Component{
 
+    handleStartTime = () => {
+        console.log("This should START the timer")
+    }
+    handleStopTime = () => {
+        console.log("This should STOP the timer")
+    }
+
     render(){
         return(
             <div>
@@ -18,6 +25,8 @@ class Hospital extends Component{
 
                         <div key={id}>
                             <Link to={{pathname:`/patients/${patient.id}`}}><p>{patient.first_name} {patient.last_name}</p></Link>
+                            {/* this is where you need to add Moment, see how you would make it increment */}
+                            <button onClick={this.handleStartTime}>Patient Arrived</button>  <button onClick={this.handleStopTime}>Patient Seen</button>
                         </div>
                     ))}
                     </div>
