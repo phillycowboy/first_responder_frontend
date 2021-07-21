@@ -4,6 +4,11 @@ import {deletePatient} from '../actions/patientActions'
 import {findPatient} from '../actions/patientActions'
 
 class Patients extends Component{
+
+    state = {
+        value: ""
+    }
+
     handleOnClick = (id) => {
         console.log("props from delete function", this.props.patients.id)
         this.props.deletePatient(id)
@@ -11,17 +16,17 @@ class Patients extends Component{
 
     handleOnChange = (e) => {
         console.log(e.target.value)
-        // this.props.patients.filter((patient) => (
-        //     e.target.value.toLowerCase().includes(patient.first_name.toLowerCase()) 
-        // ))
-    //     return filteredName
-    // e.target.name = e.target.value
-    this.props.findPatient(e)
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+        this.props.findPatient(this.state.value)
     }
     render(){
+        const filteredName = this.props.patients.filter((patient) => patient.first_name.includes(this.props.value))
+        console.log("patient comp", this.props.value)
         return (
             <div>
-                <input type="text" name="search-bar" onChange={this.handleOnChange} value={this.props.value} placeholder="Search..."/>
+                <input type="text" name="value" onChange={this.handleOnChange} value={this.state.value} placeholder="Search..."/>
                 {/* see what you can do to search for patients while still handiling state with the store */}
                 {this.props.patients.map((patient, id) => (
                     <div key={id}>
