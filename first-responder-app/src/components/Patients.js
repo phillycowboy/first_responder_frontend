@@ -10,6 +10,10 @@ class Patients extends Component{
 
     handleOnChange = (e) => {
         console.log(e.target.value)
+    //    const filteredName = this.props.patients.filter((patient) => (
+    //         e.target.value.toLowerCase().includes(patient.first_name.toLowerCase()) 
+    //     ))
+    //     return filteredName
     }
     render(){
         return (

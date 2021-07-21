@@ -6,6 +6,7 @@ class Timer extends Component{
         seconds: 0
     }
 
+
     handleStartTime = () => {
         console.log("This should START the timer")
        this.intervalId =  setInterval(() => {
@@ -14,8 +15,9 @@ class Timer extends Component{
                 minute: this.state.seconds === 59 ? this.state.minute + 1 : this.state.minute
             })
         }, 1000)
-        // localStorage.setItem("timer", this.intervalId)
+
     }
+
    
     handleStopTime = () => {
         console.log("This should STOP the timer")
