@@ -20,6 +20,7 @@ class Patients extends Component{
             [e.target.name]: e.target.value
         })
         this.props.findPatient(this.state.value)
+        // maybe add condtional if search is "" render whole array
     }
     render(){
         const filteredName = this.props.patients.filter((patient) => patient.first_name.includes(this.props.value))
