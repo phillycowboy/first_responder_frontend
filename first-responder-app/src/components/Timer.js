@@ -8,7 +8,7 @@ class Timer extends Component{
 
     handleStartTime = () => {
         console.log("This should START the timer")
-        setInterval(() => {
+       this.intervalId =  setInterval(() => {
             this.setState({
                 seconds: this.state.seconds === 59 ? 0 : this.state.seconds + 1,
                 minute: this.state.seconds === 59 ? this.state.minute + 1 : this.state.minute
@@ -18,7 +18,7 @@ class Timer extends Component{
    
     handleStopTime = () => {
         console.log("This should STOP the timer")
-        clearInterval(this.state) 
+        clearInterval(this.intervalId) 
   
     }
 
