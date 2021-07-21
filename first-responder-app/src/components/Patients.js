@@ -59,4 +59,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
+// maybe just try and get it to be a callback function for handleOnChange instead of going through the store, beacuse you are already handling state throught store
+
 export default connect(null, mapDispatchToProps)(Patients)
