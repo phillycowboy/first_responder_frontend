@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import {deletePatient} from '../actions/patientActions'
+import {findPatient} from '../actions/patientActions'
 
 class Patients extends Component{
     handleOnClick = (id) => {
@@ -10,15 +11,17 @@ class Patients extends Component{
 
     handleOnChange = (e) => {
         console.log(e.target.value)
-    //    const filteredName = this.props.patients.filter((patient) => (
-    //         e.target.value.toLowerCase().includes(patient.first_name.toLowerCase()) 
-    //     ))
+        // this.props.patients.filter((patient) => (
+        //     e.target.value.toLowerCase().includes(patient.first_name.toLowerCase()) 
+        // ))
     //     return filteredName
+    // e.target.name = e.target.value
+    this.props.findPatient(e)
     }
     render(){
         return (
             <div>
-                <input type="text" name="search-bar" onChange={this.handleOnChange} placeholder="Search..."/>
+                <input type="text" name="search-bar" onChange={this.handleOnChange} value={this.props.value} placeholder="Search..."/>
                 {/* see what you can do to search for patients while still handiling state with the store */}
                 {this.props.patients.map((patient, id) => (
                     <div key={id}>
@@ -46,7 +49,8 @@ class Patients extends Component{
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        deletePatient: (patient) => dispatch(deletePatient(patient))
+        deletePatient: (patient) => dispatch(deletePatient(patient)),
+        findPatient: (e) => dispatch(findPatient(e))
     }
 }
 

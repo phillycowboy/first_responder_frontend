@@ -24,6 +24,12 @@ const patientReducer = (state = {patients: [], loading: false}, action) => {
                 ...state,
                 patients 
             }
+        case "FIND_PATIENT":
+            const patient = state.patients.filter(patient => patient.first_name === action.patient.first_name)
+            return {
+                ...state,
+                patient
+            }
         default:
             return state
     }

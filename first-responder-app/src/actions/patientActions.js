@@ -35,3 +35,9 @@ export const deletePatient = (id) => {
     }
 
 }
+
+export const findPatient = (e) => {
+    return (dispatch) => {
+        dispatch({type: "FIND_PATIENT", patient: e})
+    }
+}
