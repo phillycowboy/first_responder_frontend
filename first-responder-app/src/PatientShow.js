@@ -19,6 +19,8 @@ const PatientShow = (props) => {
             <h4>Chief Complaint: {patient.chief_complaint}</h4>
             <h4>On Scene Description: {patient.on_scene_description}</h4>
             <h4>Currently Admitted At: {patient.hospital.name}</h4>
+            <h4>Arrival Time: {patient.arrival_time}</h4>
+            <h4>Date of Arrival: {patient.date_of_arrival}</h4>
             {/* {props.patients.map((p) => (
                 p.first_name
             ))} */}
