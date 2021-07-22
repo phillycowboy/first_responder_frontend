@@ -16,7 +16,7 @@ class Hospital extends Component{
                     <h1>{hospital.name}</h1>
                     <h2>{hospital.address}</h2>
                     <h3>{hospital.phone_number}</h3>
-                    <span>Patients Currently Administered:</span><br/><br/>
+                    <span>Patients Currently Admitted:</span><br/><br/>
                     {this.props.patients.filter((patient)=> ( patient.hospital_id === hospital.id)).map((patient, id) => (
 
                         <div key={id} className="patient-card">

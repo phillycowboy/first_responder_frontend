@@ -9,7 +9,7 @@ const Nav = () => {
                     <NavLink 
                     exact
                     to="/"
-                    style={{textDecoration: 'none'}}
+                    style={{textDecoration: 'none', color: 'blue'}}
                     >
                         Home
                     </NavLink> 
@@ -18,7 +18,7 @@ const Nav = () => {
                     <NavLink 
                     exact
                     to="/about"
-                    style={{textDecoration: 'none'}}
+                    style={{textDecoration: 'none', color: 'blue'}}
 
                     >
                         About
@@ -28,7 +28,7 @@ const Nav = () => {
                     <NavLink 
                     exact
                     to="/contact"
-                    style={{textDecoration: 'none'}}
+                    style={{textDecoration: 'none', color: 'blue'}}
 
                     >
                         Contact
@@ -38,7 +38,7 @@ const Nav = () => {
                     <NavLink 
                     exact
                     to="/hospitals"
-                    style={{textDecoration: 'none'}}
+                    style={{textDecoration: 'none', color: 'blue'}}
 
                     >
                         Hospitals
@@ -48,7 +48,7 @@ const Nav = () => {
                     <NavLink 
                     exact
                     to="/patients"
-                    style={{textDecoration: 'none'}}
+                    style={{textDecoration: 'none', color: 'blue'}}
 
                     >
                         Patients
@@ -58,7 +58,7 @@ const Nav = () => {
                     <NavLink 
                     exact
                     to="/patient-form"
-                    style={{textDecoration: 'none'}}
+                    style={{textDecoration: 'none', color: 'blue'}}
 
                     >
                         Patient Form 

@@ -7,7 +7,7 @@ const PatientShow = (props) => {
     const patient = props.patients.find((patient) => patient.id === parseInt(props.match.params.id, 10))
     console.log("this is the patient from Patient show", patient)
     return (
-        <div>
+        <div className="patient-show">
             <h1>{patient.first_name} {patient.last_name}</h1>
             <h3>Gender:{patient.gender} Pronouns:{patient.pronouns}</h3>
             <h4>Heart Rate: {patient.heart_rate}</h4>

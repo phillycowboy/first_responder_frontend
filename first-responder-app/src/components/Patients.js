@@ -49,7 +49,7 @@ class Patients extends Component{
                         <h4>Located at Hospital:{patient.hospital.name}</h4>
                         <h4>Arrival Time:{patient.arrival_time}</h4>
                         <h4>Date of Arrival:{patient.date_of_arrival}</h4>
-                        <button onClick={() => this.handleOnClick(patient.id)}>Delete Patient</button>
+                        <button onClick={() => this.handleOnClick(patient.id)} className="delete">Delete Patient</button>
                     </div>
                 ))}
             </div>

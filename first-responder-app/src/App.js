@@ -7,6 +7,7 @@ import ContactContainer from './containers/ContactContainer'
 import HospitalContainer from './containers/HospitalContainer'
 import PatientContainer from './containers/PatientContainer'
 import PatientFormContainer from './containers/PatientFormContainer'
+import HomeContainer from './containers/HomeContainer';
 import PatientShow from './PatientShow'
 import {connect} from 'react-redux'
 import {getAllHospitals} from './actions/hospitalActions'
@@ -27,7 +28,7 @@ class App extends Component{
           <Nav />
           <Switch>
             <Route exact path="/">
-  
+              <HomeContainer/>
             </Route>
             <Route exact path="/about">
               <AboutContainer />
