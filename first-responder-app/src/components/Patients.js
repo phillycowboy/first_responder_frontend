@@ -24,7 +24,7 @@ class Patients extends Component{
 
         return (
             <div>
-                <input type="text" name="value" onChange={this.handleOnChange} value={this.state.value} placeholder="Search..."/>
+                <input type="text" name="value" onChange={this.handleOnChange} value={this.state.value} placeholder="Search..." className="search"/>
                 {this.props.patients.filter((patient) => {
                     if(this.state.value === ""){
                         return patient
@@ -32,9 +32,9 @@ class Patients extends Component{
                         return patient
                     }
                 }).map((patient, id) => (
-                    <div key={id}>
+                    <div key={id} className="patient-card">
                         <h1>First Name:{patient.first_name}</h1>
-                        <h1>Last Name:{patient.last_name}</h1><hr/>
+                        <h1>Last Name:{patient.last_name}</h1>
                         <h3>Age:{patient.age}</h3>
                         <h3>Gender:{patient.gender}</h3>
                         <h3>Pronouns:{patient.pronouns}</h3>
@@ -50,7 +50,6 @@ class Patients extends Component{
                         <h4>Arrival Time:{patient.arrival_time}</h4>
                         <h4>Date of Arrival:{patient.date_of_arrival}</h4>
                         <button onClick={() => this.handleOnClick(patient.id)}>Delete Patient</button>
-                        <hr />
                     </div>
                 ))}
             </div>

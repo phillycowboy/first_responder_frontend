@@ -55,7 +55,7 @@ class PatientForm extends Component{
 
     render(){
         return(
-            <div>
+            <div className="patient-form">
                 <h1>FIRST RESPONDER PATIENT FORM</h1><hr/>
                 <h3>Please fill out this form as accurately as possible, as we will need this information upon patients arrival.</h3>
                 <form onSubmit={this.handleSubmit}>
