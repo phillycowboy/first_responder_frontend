@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import Timer from './Timer'
+// import Timer from './Timer'
 
 
 
@@ -21,7 +21,7 @@ class Hospital extends Component{
 
                         <div key={id}>
                             <Link to={{pathname:`/patients/${patient.id}`}}><p>{patient.first_name} {patient.last_name}</p></Link>
-                            <Timer />
+                            {/* <Timer /> */}
                             
                         </div>
                     ))}
