@@ -3,7 +3,7 @@ import About from '../components/About'
 
 const AboutContainer = () => {
     return (
-        <div>
+        <div className="about-container">
             <About />
         </div>
     )

@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 class PatientFormContainer extends Component{
     render(){
         return (
-            <div>
+            <div className="patient-form-container">
                 <PatientForm />
             </div>
         )

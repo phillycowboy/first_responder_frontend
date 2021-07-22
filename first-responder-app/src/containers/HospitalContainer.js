@@ -7,7 +7,7 @@ class HospitalContainer extends Component{
     render(){
         
         return(
-            <div>
+            <div className="hospital-container">
                 <Hospitals hospitals={this.props.hospitals} patients={this.props.patients}/>
             </div>
         )

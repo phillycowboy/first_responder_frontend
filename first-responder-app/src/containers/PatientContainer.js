@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 class PatientConatiner extends Component{
     render(){
         return(
-            <div>
+            <div className="patient-container">
                 <Patients patients={this.props.patients} hospitals={this.props.hospitals}/>
             </div>
         )
