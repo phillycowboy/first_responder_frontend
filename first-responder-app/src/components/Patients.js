@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import {deletePatient} from '../actions/patientActions'
-import {findPatient} from '../actions/patientActions'
+// import {findPatient} from '../actions/patientActions'
 
 class Patients extends Component{
 
@@ -19,17 +19,19 @@ class Patients extends Component{
         this.setState({
             [e.target.name]: e.target.value
         })
-        this.props.findPatient(this.state.value)
-        // maybe add condtional if search is "" render whole array
     }
     render(){
-        const filteredName = this.props.patients.filter((patient) => patient.first_name.includes(this.props.value))
-        console.log("patient comp", this.props.value)
+
         return (
             <div>
                 <input type="text" name="value" onChange={this.handleOnChange} value={this.state.value} placeholder="Search..."/>
-                {/* see what you can do to search for patients while still handiling state with the store */}
-                {this.props.patients.map((patient, id) => (
+                {this.props.patients.filter((patient) => {
+                    if(this.state.value === ""){
+                        return patient
+                    }else if(patient.first_name.toLowerCase().includes(this.state.value.toLowerCase())){
+                        return patient
+                    }
+                }).map((patient, id) => (
                     <div key={id}>
                         <h1>First Name:{patient.first_name}</h1>
                         <h1>Last Name:{patient.last_name}</h1><hr/>
@@ -56,10 +58,9 @@ class Patients extends Component{
 const mapDispatchToProps = (dispatch) => {
     return {
         deletePatient: (patient) => dispatch(deletePatient(patient)),
-        findPatient: (e) => dispatch(findPatient(e))
+        // findPatient: (e) => dispatch(findPatient(e))
     }
 }
 
-// maybe just try and get it to be a callback function for handleOnChange instead of going through the store, beacuse you are already handling state throught store
 
 export default connect(null, mapDispatchToProps)(Patients)

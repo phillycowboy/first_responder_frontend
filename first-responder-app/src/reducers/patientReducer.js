@@ -24,13 +24,13 @@ const patientReducer = (state = {patients: [], loading: false}, action) => {
                 ...state,
                 patients 
             }
-        case "FIND_PATIENT":
-            const patient = state.patients.filter(patient => patient.first_name.includes(action.patient))
-            console.log("filter from reducer", patient)
-            return {
-                ...state,
-                patients: patient
-            }
+        // case "FIND_PATIENT":
+        //     const patient = state.patients.filter(patient => patient.first_name.includes(action.patient))
+        //     console.log("filter from reducer", patient)
+        //     return {
+        //         ...state,
+        //         patients: patient
+        //     }
         default:
             return state
     }
