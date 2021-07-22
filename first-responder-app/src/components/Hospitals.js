@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 // import Timer from './Timer'
+import moment from 'moment'
 
 
 
@@ -22,7 +23,8 @@ class Hospital extends Component{
                         <div key={id} className="patient-card">
                             <Link to={{pathname:`/patients/${patient.id}`}}><p>{patient.first_name} {patient.last_name}</p></Link>
                             <div>Patient Arrival Time: {patient.arrival_time}</div>
-                            <div>Patient Arrival Date: {patient.date_of_arrival}</div>
+                            {/* <div>Patient Arrival Date: {patient.date_of_arrival}</div> */}
+                            <div>Patient Arrival Time: </div>{moment(patient.date_of_arrival).format("MMM Do YY")}
                             {/* <Timer /> */}
                             
                         </div>

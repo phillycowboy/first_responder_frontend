@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 // import Patients from './components/Patients'
+import moment from 'moment'
 
 const PatientShow = (props) => {
     console.log("PatientShow", props)
@@ -20,7 +21,8 @@ const PatientShow = (props) => {
             <h4>On Scene Description: {patient.on_scene_description}</h4>
             <h4>Currently Admitted At: {patient.hospital.name}</h4>
             <h4>Arrival Time: {patient.arrival_time}</h4>
-            <h4>Date of Arrival: {patient.date_of_arrival}</h4>
+            {/* <h4>Date of Arrival: {patient.date_of_arrival}</h4> */}
+            <h4>Patient Arrival Time: </h4>{moment(patient.date_of_arrival).format("MMM Do YY")}
             {/* {props.patients.map((p) => (
                 p.first_name
             ))} */}

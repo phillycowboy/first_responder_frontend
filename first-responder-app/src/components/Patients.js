@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import {deletePatient} from '../actions/patientActions'
 // import {findPatient} from '../actions/patientActions'
+import moment from 'moment'
 
 class Patients extends Component{
 
@@ -24,7 +25,7 @@ class Patients extends Component{
 
         return (
             <div>
-                <input type="text" name="value" onChange={this.handleOnChange} value={this.state.value} placeholder="Search..." className="search"/>
+                <input type="text" name="value" onChange={this.handleOnChange} value={this.state.value} placeholder="Search..." className="search"/><i class="fas fa-search"></i>
                 {this.props.patients.filter((patient) => {
                     if(this.state.value === ""){
                         return patient
@@ -48,7 +49,8 @@ class Patients extends Component{
                         <h4>On Scene Description:{patient.on_scene_description}</h4>
                         <h4>Located at Hospital:{patient.hospital.name}</h4>
                         <h4>Arrival Time:{patient.arrival_time}</h4>
-                        <h4>Date of Arrival:{patient.date_of_arrival}</h4>
+                        {/* <h4>Date of Arrival:{patient.date_of_arrival}</h4> */}
+                        <h4>Patient Arrival Time: </h4>{moment(patient.date_of_arrival).format("MMM Do YY")}<br/>
                         <button onClick={() => this.handleOnClick(patient.id)} className="delete">Delete Patient</button>
                     </div>
                 ))}

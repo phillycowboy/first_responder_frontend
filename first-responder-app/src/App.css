@@ -157,6 +157,45 @@ h1 {
 	color: blue;
 }
 
+.home-image {
+	margin-right: 700px;
+	margin-left: 75px;
+	margin-top: 20px;
+	background-color: white;
+	padding-right: 100%;
+	padding-left: 50px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 10px;
+}
+img {
+	border-radius: 10px;
+	border: 3px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.home-logo {
+	color: blue;
+	font-family: 'Fira Sans', sans-serif;
+	position: absolute;
+	padding-left: 1400px;
+	padding-top: 100px;
+	z-index: 9;
+	/* font-size: 20px; */
+
+	/* padding-top: 50px; */
+	/* margin-top: 70px; */
+	/* margin-bottom: 300px; */
+}
+.emt-logo {
+	position: absolute;
+	bottom: 50px;
+	left: 1225px;
+	height: 750px;
+	/* padding-bottom: 700px; */
+	/* padding-bottom: 200px; */
+	z-index: 1;
+}
+
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;
