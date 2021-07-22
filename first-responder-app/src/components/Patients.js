@@ -47,6 +47,8 @@ class Patients extends Component{
                         <h4>Chief Complaint:{patient.chief_complaint}</h4>
                         <h4>On Scene Description:{patient.on_scene_description}</h4>
                         <h4>Located at Hospital:{patient.hospital.name}</h4>
+                        <h4>Arrival Time:{patient.arrival_time}</h4>
+                        <h4>Date of Arrival:{patient.date_of_arrival}</h4>
                         <button onClick={() => this.handleOnClick(patient.id)}>Delete Patient</button>
                         <hr />
                     </div>
@@ -61,6 +63,7 @@ const mapDispatchToProps = (dispatch) => {
         // findPatient: (e) => dispatch(findPatient(e))
     }
 }
+
 
 
 export default connect(null, mapDispatchToProps)(Patients)

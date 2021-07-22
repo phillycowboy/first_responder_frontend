@@ -19,7 +19,9 @@ class PatientForm extends Component{
         end_tidal: "",
         chief_complaint: "",
         on_scene_description: "",
-        hospital_id: ""
+        hospital_id: "",
+        arrival_time: "",
+        date_of_arrival: ""
     }
     handleOnChange = (event) => {
         this.setState({
@@ -45,7 +47,9 @@ class PatientForm extends Component{
             end_tidal: "",
             chief_complaint: "",
             on_scene_description: "",
-            hospital_id: ""
+            hospital_id: "",
+            arrival_time: "",
+            date_of_arrival: ""
         })
     }
 
@@ -88,6 +92,10 @@ class PatientForm extends Component{
                             <option value={hospital.id} name="hospital_id">{hospital.name}</option>
                         ))}
                     </select><br/><br/>
+                    <label>Patient Arrival Time:</label>
+                    <input type="time" name="arrival_time" value={this.state.arrival_time} onChange={this.handleOnChange}/><br/><br/>
+                    <label>Patient Arrival Date: </label>
+                    <input type="date" name="date_of_arrival" value={this.state.date_of_arrival} onChange={this.handleOnChange}/><br/><br/>
                     <label>Submit Patient:</label><br/><br/>
                     <input type="submit"/>
                 </form>

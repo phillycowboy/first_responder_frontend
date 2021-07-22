@@ -21,6 +21,8 @@ class Hospital extends Component{
 
                         <div key={id}>
                             <Link to={{pathname:`/patients/${patient.id}`}}><p>{patient.first_name} {patient.last_name}</p></Link>
+                            <div>Patient Arrival Time: {patient.arrival_time}</div>
+                            <div>Patient Arrival Date: {patient.date_of_arrival}</div>
                             {/* <Timer /> */}
                             
                         </div>
