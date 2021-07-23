@@ -14,7 +14,7 @@ __________________________________________________
 Clone this respository down to your local machine by navigating the green ```Code``` button in the top right corner of this repo. type ```git clone``` in your local terminal
 and paste in the SSH Key provided for you from the ```Code``` button. You will have to do this for the backend repo as well which you can find here: https://github.com/phillycowboy/first_responder_backend-
 Once you have them both cloned down cd into ```first-responder-app`` for the frontend and ```first_responder_api``` for the backend. Once you are in the appropriate 
-file for the frontend type ```npm i && npm start``` to ensure that all of your dependencies are installed. If a new browser window fails to open naviagate to ```http://localhost:3000```
+file for the frontend type ```npm i && npm start``` to ensure that all of your dependencies are installed. If a new browser window fails to open naviagate to http://localhost:3000
 For the backend you are going to want to type ```bundle install``` once all of your gems have been installed run the command ```rails s``` to start your backend server.
 Hit refresh in the browser to ensure that all the data has loaded from the API, and you're set! 
 
