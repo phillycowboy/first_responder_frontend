@@ -32,6 +32,7 @@ class Patients extends Component{
                     }else if(patient.first_name.toLowerCase().includes(this.state.value.toLowerCase())){
                         return patient
                     }
+                    // return patient
                 }).map((patient, id) => (
                     <div key={id} className="patient-card">
                         <h1>First Name:{patient.first_name}</h1>

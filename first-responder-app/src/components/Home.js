@@ -2,9 +2,11 @@ import React from 'react'
 
 const Home = () => {
     return(
-        <div>
+        <div className="slide-in-right">
             <div className="home-logo">
-                <h1>FIRST RESPONDER</h1>
+                <div className="tracking-in-contract-bck-top">
+                <h1><strong>FIRST RESPONDER</strong></h1>
+                </div>
             </div>
             <img src="https://images.pexels.com/photos/6520084/pexels-photo-6520084.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=500" alt="ambulance" className="home-image"/>
             <div className="emt-logo">
