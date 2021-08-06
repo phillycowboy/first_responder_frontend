@@ -13,7 +13,7 @@ class Hospital extends Component{
         }
     }
 
-    handleClick = () => {
+    handleClick = (e) => {
         console.log("liked")
         this.setState(prevState => {
             return{
