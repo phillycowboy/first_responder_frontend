@@ -6,8 +6,22 @@ import moment from 'moment'
 
 
 class Hospital extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            like: 0
+        }
+    }
 
+    handleClick = () => {
+        console.log("liked")
+        this.setState(prevState => {
+            return{
+                like: prevState.like + this.props.likedAmount  
 
+            }
+        })
+    }
 
     render(){
         return(
@@ -24,9 +38,11 @@ class Hospital extends Component{
                             <Link to={{pathname:`/patients/${patient.id}`}}><p>{patient.first_name} {patient.last_name}</p></Link>
                             <div>Patient Arrival Time: {patient.arrival_time}</div>
                             {/* <div>Patient Arrival Date: {patient.date_of_arrival}</div> */}
-                            <div>Patient Arrival Time: </div>{moment(patient.date_of_arrival).format("MMM Do YY")}
+                            <div>Patient Arrival Time: </div>{moment(patient.date_of_arrival).format("MMM Do YY")}<br/>
                             {/* <Timer /> */}
                             
+                            {this.state.like}<br/>
+                            <button onClick={this.handleClick}>Like</button>
                         </div>
                     ))}
                     </div>

@@ -4,11 +4,24 @@ import {connect} from 'react-redux'
 
 class HospitalContainer extends Component{
 
+    state={
+        likedAmount: 0
+    }
+
+    handleOnChange = (e) => {
+        console.log("likedAmount", e.target.value)
+        this.setState({
+            likedAmount: parseInt(e.target.value)
+
+        })
+    }
+
     render(){
         
         return(
             <div className="hospital-container">
-                <Hospitals hospitals={this.props.hospitals} patients={this.props.patients}/>
+                <input type="number" name="likedAmount" onChange={this.handleOnChange}></input>
+                <Hospitals hospitals={this.props.hospitals} patients={this.props.patients} likedAmount={this.state.likedAmount}/>
             </div>
         )
     }
